@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="practice.MainPage">
+
+    <StackLayout>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text='Name' Margin="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Entry x:Name="Name" WidthRequest="60"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text='SurName' HorizontalOptions="Center" VerticalOptions="Center" />
+                <Entry x:Name="SurName"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text='number' HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Entry x:Name="num"/>
+            </StackLayout>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <RadioButton x:Name="male" Content="Male"/>
+            <RadioButton x:Name="female" Content="Female"/>
+        </StackLayout>
+        <Label Text="whatever" HorizontalOptions="Center" BackgroundColor="Grey"/>
+
+        <Grid HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        
+            <CheckBox x:Name="se1" Grid.Row="0" Grid.Column="0"/>
+            
+            <CheckBox x:Name="se2"  Grid.Row="0" Grid.Column="2"/>
+            
+            <CheckBox x:Name="se3"  Grid.Row="1" Grid.Column="0"/>
+            
+            <CheckBox x:Name="se4"  Grid.Row="1" Grid.Column="2"/>
+            
+        </Grid>
+
+        <StackLayout Background="White">
+            <StackLayout BackgroundColor="Blue">
+                <Button x:Name="Add" Text="Add" Clicked="Add_Clicked" WidthRequest="100" HeightRequest="40"/>
+            </StackLayout>
+            <ListView x:Name="slist" BackgroundColor="DarkBlue">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding name}"/>
+                                <Label Text="{Binding SurName}"/>
+                                <Label Text="{Binding Tel}"/>
+                                <Label Text="{Binding Gender}"/>
+                                <Label Text="{Binding Sl1}"/>
+                                <Label Text="{Binding Sl2}"/>
+                                <Label Text="{Binding Sl3}"/>
+                                <Label Text="{Binding Sl4}"/>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+        <Button x:Name="Show" Text="Show" Clicked="Show_Clicked" WidthRequest="80" HeightRequest="50"/>
+    </StackLayout>
+
+</ContentPage>
